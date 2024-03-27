@@ -10,8 +10,8 @@ function PokemonCard ({pokemon}){
       </figure>
       );
 }
-PokemonCard.protoTypes = {
-    pokemonList : PropTypes.shape({
+PokemonCard.propTypes = {
+    pokemon : PropTypes.shape({
     imgSrc: PropTypes.string,
     name: PropTypes.string.isRequired,
   }).isRequired,
