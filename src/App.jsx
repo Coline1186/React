@@ -7,41 +7,43 @@ const pokemonList = [
       name: "bulbasaur",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+        id: "bulbasaur",
     },
     {
       name: "charmander",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+        id: "charmander",
     },
     {
       name: "squirtle",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+        id: "squirtle",
     },
     {
       name: "pikachu",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+        id: "pikachu"
     },
     {
       name: "mew",
+      id: "mew",
     },
   ];
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  const handleClickPrecedent = () => {
-    setPokemonIndex(pokemonIndex - 1)
-  }
-  const handleClickSuivant = () => {
-    setPokemonIndex(pokemonIndex + 1)
-  }
+  const handleClick = (index) => {
+    setPokemonIndex(index);
+  };
   
   return (
   <div>
     <PokemonCard pokemon = {pokemonList[pokemonIndex]}/>
-    <NavBar handleClickPrecedent={handleClickPrecedent} handleClickSuivant={handleClickSuivant} pokemonList={pokemonList} pokemonIndex={pokemonIndex}/>
+    <NavBar pokemonList={pokemonList} pokemonIndex={pokemonIndex} handleClick={handleClick}/>
   </div>
   );
 }
