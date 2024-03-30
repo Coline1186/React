@@ -2,8 +2,7 @@ function PokemonCard ({pokemon}){
   
   return (
       <figure>
-          {pokemon.imgSrc ? <img></img> : <p>???</p>}
-          <img src = {pokemon.imgSrc}></img>
+          {pokemon.imgSrc ? <img src = {pokemon.imgSrc}></img> : <p>???</p>}      
           <figcaption><h1>{pokemon.name}</h1></figcaption>
       </figure>
       );
